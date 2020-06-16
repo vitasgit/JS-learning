@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>anchor</title>
+	<style type="text/css">
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.invisible {
+			visibility: hidden;
+			transition: all 1s ease;
+		}
+
+		.container__example:after {
+			content: "";
+			display: none;
+			background-image: url(cat.png);
+		 	background-size: cover;
+			width: 50px;
+			height: 50px;
+			transition: all 1s ease;
+		}
+
+		.clicked:after {
+			display: block;
+			transition: all 1s ease;
+		}
+
+	</style>
 </head>
 <body>
+	<div class="container">
+		<a class ="container__example" href="#">Ссылка</a>
+	</div>
 	
+	<script>
+		var cat = document.querySelector('.container__example');
+
+		cat.addEventListener("click", function() {
+		    cat.classList.toggle("clicked");
+
+		    if (cat.classList.contains('clicked')) {
+		        cat.textContent = "";
+        	}
+        	else {
+        		cat.textContent = "Ссылка";
+        	}
+		});
+	</script>
 </body>
 </html>
