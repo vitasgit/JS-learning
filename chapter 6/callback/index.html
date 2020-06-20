@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Всплывающее окно авторизации</title>
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<style>
+	p {
+		font-size: 1.5rem;
+	}
+	.content {
+		max-width: 500px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.photo {
+		margin-bottom: 1em;
+	}
+
+	.photo,
+	.caption {
+		display: none;
+	}
+</style>
+<script src="../../assets/_js/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div class="wrapper">
+	<header>
+	   JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+	</header>
+	
+	<div class="content">
+		<img class="photo" src="https://picsum.photos/350">
+
+		<p class="caption">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tempore, minima nostrum laborum beatae porro.
+		</p>
+	</div>
+
+	<footer>
+<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+  </footer>
+</div>
+
+	<script>
+		window.onload = function(){
+			$('.photo').fadeIn(500, function() {
+				$('.caption').fadeIn(250);
+			});
+		}
+	</script>
+	
+</body>
+</html>
