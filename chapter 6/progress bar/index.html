@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>progress bar</title>
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<style>
+	.progress-box {
+		height: 50px;
+		border: 2px solid;
+		animation: progress 5s forwards;
+		animation-play-state: paused;
+	}
+
+	@keyframes progress {
+		0% {
+			width: 0%;
+			background-color: red;
+		}
+
+		50% {
+			background-color: yellow;
+		}
+
+		100% {
+			width: 80%;
+			background-color: green;
+		}
+	}
+</style>
+
+<script src="../../assets/_js/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#progress-start').click(function(event) {
+			$('.progress-box').css('animation-play-state', 'running');
+			console.log('sadasd');
+		});
+	});
+</script>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <header>
+    JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+  </header>
+
+<div class="content">
+	<button id="progress-start">Кликни</button>
+	<div class="progress-box"></div>
+</div>
+
+<footer>
+<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+  </footer>
+
+</div>
+</body>
+</html>
