@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<style>
+	.container {
+		padding: 2rem;
+		display: inline-flex;
+		flex-direction: column;
+	}
+</style>
+
+<script src="../../assets/_js/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#change-btn').click(function(event) {
+			$('img').replaceWith('<img src="img-2.jpg" alt="рандомное изображение">');
+		});
+	});
+</script>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <header>
+    JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+  </header>
+
+<div class="container">
+	<h1>Рандомное изображение</h1>
+	<button id="change-btn" alt="a">Сменить</button>
+	<img src="img-1.jpg" alt="рандомное изображение">
+</div>
+
+<footer>
+<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+  </footer>
+
+</div>
+</body>
+</html>
