@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>change img v3</title>
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<style>
+	h1 {
+		font-family: sans-serif;
+		font-weight: bold;
+	}
+	.container {
+		padding: 2rem;
+		display: inline-flex;
+		flex-direction: column;
+	}
+</style>
+
+<script src="../../assets/_js/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		var newPhoto = new Image();
+		newPhoto.src = 'img-2.jpg';
+		$('img').mouseover(function(event) {
+			$(this).attr('src', newPhoto.src);
+		});
+	});
+</script>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <header>
+    JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+  </header>
+
+<div class="container">
+	<h1>Рандомное изображение + hover</h1>
+	<img src="img-1.jpg" alt="рандомное изображение">
+</div>
+
+<footer>
+<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+  </footer>
+
+</div>
+</body>
+</html>
