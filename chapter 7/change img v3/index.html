@@ -20,10 +20,16 @@
 
 <script>
 	$(document).ready(function() {
+		var oldPhoto = new Image();
 		var newPhoto = new Image();
+
+		oldPhoto.src = $('img').attr('src');
 		newPhoto.src = 'img-2.jpg';
-		$('img').mouseover(function(event) {
+
+		$('img').hover(function() {
 			$(this).attr('src', newPhoto.src);
+		}, function() {
+			$(this).attr('src', oldPhoto.src);
 		});
 	});
 </script>
