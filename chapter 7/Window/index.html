@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myWindow</title>
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<style>
+	.main {
+		display: inline-flex;
+		flex-direction: column;
+	}
+</style>
+<script src="../../assets/_js/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	function windowOpen(url, width, height, left, top) {
+    	window.open(url, 
+    				'name', 
+    		    	'width=' + width + 
+    		    	',height=' + height + 
+    		    	',left='  + left +
+    		    	', top=' + top);
+	    }
+
+	// ширина и высота изображения
+	var widthImg = 400;
+	var heightImg = 500;
+
+	// расположение изображения по центру
+	var left = (window.innerWidth - widthImg) / 2;
+	var top = (window.innerHeight - heightImg) / 2;
+
+	// открыть окно посредством метода open()
+	$('.link-window-v1').click(function(event) {
+		event.preventDefault();
+
+		var myWindow = open('cindy-sherman.jpg', 'name', 'width=300, height=300, left=200, top=100');
+	});
+
+	// открыть окно посредством функции windowOpen
+	$('.link-window-v2').click(function(event) {
+		event.preventDefault();
+		
+		windowOpen('ACAB.jpg', widthImg, heightImg, left, top);
+	});
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+    JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+	</header>
+	<div class="content">
+		<div class="main">
+			<a class="link-window-v1" href="#">Открыть новое окно v1</a>
+			<a class="link-window-v2" href="#">Открыть новое окно v2</a>
+		</div>
+	</div>
+	<footer>
+<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+	</footer>
+</div>
+</body>
+</html>
