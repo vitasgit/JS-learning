@@ -5,10 +5,15 @@
 <title>Отзывчивое меню навигации</title>
 <link href="../../assets/_css/site.css" rel="stylesheet">
 
+<!-- plugin smartmenus -->
+<link rel="stylesheet" href="smartmenus/sm-core-css.css">
+<link rel="stylesheet" href="smartmenus/sm-simple.css">
+
 <script src="../../assets/_js/jquery.min.js"></script>
+<script src="smartmenus/jquery.smartmenus.min.js"></script>
 <script>
 $(document).ready(function() {
-  
+  $('.sm').smartmenus();
 }); // end ready
 </script>
 </head>
@@ -20,7 +25,7 @@ $(document).ready(function() {
   <div class="content">
     <div class="main">
       <h1>Меню навигации</h1>
-      <ul>
+      <ul class="sm sm-simple">
         <li><a href="#">Домой</a></li>
         <li><a href="#">О нас</a>
           <ul>
