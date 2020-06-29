@@ -9,16 +9,28 @@
 $(document).ready(function() {
 	$(':text:first').focus();
 
+	// disable credit card info
 	$('#paypal').click(function(event) {
 		$('#creditCard input').prop('disabled', true);
 		$('#creditCard input').css('backgroundColor', '#ccc');
 		$('#creditCard label').css('color', '#bbb');
 	});
 
+	// enable credit card info
 	$('#visa, #mastercard').click(function(event) {
 		$('#creditCard input').prop('disabled', false);
 		$('#creditCard input').css('backgroundColor', '');
 		$('#creditCard label').css('color', '');
+	});
+
+	// hide shipping info
+	$('#hideShip').click(function(event) {
+		if ($(this).prop('checked')) {
+			$('#shipping').slideUp('fast');
+		}
+		else {
+			$('#shipping').slideDown('fast');
+		}
 	});
 });
 // end ready
