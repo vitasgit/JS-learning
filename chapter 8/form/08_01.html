@@ -7,8 +7,15 @@
 <script src="../../assets/_js/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-	
-}); // end ready
+	$(':text:first').focus();
+
+	$('#paypal').click(function(event) {
+		$('#creditCard input').prop('disabled', true);
+		$('#creditCard input').css('backgroundColor', '#ccc');
+		$('#creditCard label').css('color', '#bbb');
+	});
+});
+// end ready
 </script>
 </head>
 <body>
