@@ -5,7 +5,19 @@
 <title>Валидация формы</title>
 <link href="../../assets/_css/site.css" rel="stylesheet">
 <style>
+	#signup label.error {
+		font-size: .8em;
+		color: #f00;
+		font-weight: bold;
+		display: block;
+		margin-left: 215px;
+	}
 
+	#signup input.error,
+	#signup select.error {
+		background: #ffa9b8;
+		border: 1px solid red;
+	}
 </style>
 <script src="../../assets/_js/jquery.min.js"></script>
 <script src="jquery_validate/additional-methods.min.js"></script>
