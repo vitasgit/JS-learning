@@ -46,7 +46,16 @@ $(document).ready(function() {
 			confirm_password: {
 				equalTo: "Пароли не совпадают"
 			}
-		} // end messages
+		}, // end messages
+
+		errorPlacement: function(error, element) {
+			if(element.is(":radio") || element.is(":checkbox")) {
+				error.appendTo(element.parent());
+			}
+			else {
+				error.insertAfter(element);
+			}
+		} // end errorPlacement
 	});
 }); // end ready
 </script>
@@ -77,7 +86,7 @@ $(document).ready(function() {
 				<input name="confirm_password" type="password" id="confirm_password">
 			</div>
 			<div><span class="label">Хобби</span>
-				<input name="hobby" type="checkbox" id="heliskiing" value="heliskiing">
+				<input name="hobby" class="required" type="checkbox" id="heliskiing" value="heliskiing">
 				<label for="heliskiing">Горные лыжи</label>
 				<input name="hobby" type="checkbox" id="pickle" value="pickle">
 				<label for="pickle">Поедание маринадов</label>
@@ -104,7 +113,7 @@ $(document).ready(function() {
 			</div>
 			<div class="labelBlock">Вы хотите получать от нас надоедливую рассылку? </div>
 			<div class="indent">
-				<input  type="radio" name="spam" id="yes" value="yes">
+				<input  type="radio" class="required" name="spam" id="yes" value="yes">
 				<label for="yes">Да</label>
 				<input type="radio" name="spam" id="definitely" value="definitely">
 				<label for="definitely">Конечно</label>
