@@ -13,7 +13,41 @@
 
 <script>
 $(document).ready(function() {
-	
+	$('#signup').validate({
+		rules: {
+			email: {				// атрибут name
+				required: true,
+				email: true
+			},
+
+			password: {
+				required: true
+			},
+
+			confirm_password: {
+				equalTo: '#password'
+			}
+		}, // end rules
+
+		messages: {
+			name: {
+				required: "Введите ваше имя"
+			},
+
+			email: {
+				required: "Введите ваш эл адрес",
+				email: "Введите корректный эл адрес"
+			},
+
+			password: {
+				required: "Введите пароль"
+			},
+
+			confirm_password: {
+				equalTo: "Пароли не совпадают"
+			}
+		} // end messages
+	});
 }); // end ready
 </script>
 </head>
@@ -28,7 +62,7 @@ $(document).ready(function() {
 		<form action="process.html" method="post" name="signup" id="signup">
 			<div>
 				<label for="name" class="label">Имя</label>
-				<input name="name" type="text" id="name" >
+				<input name="name" class="required" type="text" id="name" >
 			</div>
 			<div>
 				<label for="email" class="label">Электронный адрес</label>
@@ -52,11 +86,11 @@ $(document).ready(function() {
 			</div>
 			<div>
 				<label for="dob" class="label">Дата рождения</label>
-				<input name="dob" type="text" id="dob">
+				<input name="dob" class="date" type="text" id="dob" title="формат ввода: 01.19.2000">
 			</div>
 			<div>
 				<label for="planet" class="label">Планета рождения</label>
-				<select name="planet" id="planet">
+				<select name="planet" class="required" id="planet" title="выберите планету">
 					<option value="">--Выберите одну--</option>
 					<option value="earth">Земля</option>
 					<option value="mars">Марс</option>
