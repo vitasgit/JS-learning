@@ -5,11 +5,18 @@
 <title>Привет, Мир</title>
 <link href="../../assets/_css/jquery-ui.min.css" rel="stylesheet">
 <link href="../../assets/_css/site.css" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/_css/ui">
 <script src="../../assets/_js/jquery.min.js"></script>
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-	alert('message?: DOMString')
+	$('#hello').dialog({
+		draggable: false,
+		resizable: false,
+		modal: true,
+		show: true,
+		hide: {effect: 'explode', delay: 250, duration: 1000, easing: 'easeInQuad'}
+	});
 }); // end ready
 </script>>
 </head>
@@ -22,8 +29,10 @@ $(document).ready(function() {
 		<div class="main">
 			<h1>Привет, Мир</h1>
 			<p>Обратите внимание на то, что это диалоговое окно выглядит гораздо лучше, чем оповещение!</p>
-<!-- Добавьте тег <div> диалогового окна здесь -->
-
+			<!-- Добавьте тег <div> диалогового окна здесь -->
+			<div id="hello" title="Hello">
+				<p>Диалоговое окно. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, illum!</p>
+			</div>
 		</div>
 	</div>
 	<footer>
