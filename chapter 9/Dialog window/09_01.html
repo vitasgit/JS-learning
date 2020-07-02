@@ -11,11 +11,16 @@
 <script>
 $(document).ready(function() {
 	$('#hello').dialog({
+		autoOpen: false,
 		draggable: false,
 		resizable: false,
 		modal: true,
 		show: true,
 		hide: {effect: 'explode', delay: 250, duration: 1000, easing: 'easeInQuad'}
+	});
+
+	$('#dialog-btn').click(function(event) {
+		$('#hello').dialog('open');
 	});
 }); // end ready
 </script>>
@@ -30,6 +35,7 @@ $(document).ready(function() {
 			<h1>Привет, Мир</h1>
 			<p>Обратите внимание на то, что это диалоговое окно выглядит гораздо лучше, чем оповещение!</p>
 			<!-- Добавьте тег <div> диалогового окна здесь -->
+			<button id="dialog-btn">Открыть диалоговое окно</button>
 			<div id="hello" title="Hello">
 				<p>Диалоговое окно. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, illum!</p>
 			</div>
