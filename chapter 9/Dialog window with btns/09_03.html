@@ -14,8 +14,13 @@ $(document).ready(function() {
  		autoOpen: false,
  		buttons: {
  			'Подтвердить': function() {
- 				$('#robot').hide('explode');
- 			}
+ 				$('#robot').effect('explode');
+ 				$(this).dialog('close');
+ 			},
+
+ 			'Отменить': function() {
+ 				$(this).dialog('close');
+ 			}  
  		}
 
  	});
