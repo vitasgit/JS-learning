@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Пример диалогового окна</title>
+<link href="../../assets/_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<script src="../../assets/_js/jquery.min.js"></script>
+<script src="../../assets/_js/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function() {
+ 	$('#confirm').dialog({
+ 		modal: true,
+ 		autoOpen: false,
+ 		buttons: {
+ 			'Подтвердить': function() {
+ 				$('#robot').hide('explode');
+ 			}
+ 		}
+
+ 	});
+
+ 	$('#robot').click(function(event) {
+ 		$('#confirm').dialog('open');
+ 	});
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+	</header>
+	<div class="content">
+		<div class="main">
+			<h1>Добавление кнопок в диалоговое окно</h1>
+			<p>Робот! Щелкните по роботу, чтобы уничтожить его.</p>
+      		<p><img src="images/robot.jpg" id="robot"></p>
+			<!-- добавьте диалоговое окно сюда -->
+			<div id="confirm" title="Уничтожить"></div>
+			<p>Уничтожить робота</p>
+		</div>
+	</div>
+	<footer>
+		<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+	</footer>
+</div>
+</body>
+</html>
