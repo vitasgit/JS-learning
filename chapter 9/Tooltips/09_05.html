@@ -9,7 +9,9 @@
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-	alert('message?: DOMString');
+	$('#contact').tooltip({
+		content: $('#contactInfo').html()
+	});
 }); // end ready
 </script>>
 </head>
@@ -23,7 +25,8 @@ $(document).ready(function() {
 			<h1>Всплывающие подсказки</h1>
 			<p>Вы можете добавить всплывающие подсказки к любому элементу страницы.</p>
 			<div class="row">
-			<p id="contact" title="hello contact">Контакты</p>
+				<p id="contact" title="hello contact">Контакты</p>
+
 			</div>
 		</div>
 	</div>
@@ -32,6 +35,11 @@ $(document).ready(function() {
 	</footer>
 </div>
 <!-- поместите шаблон здесь -->
-
+	<script id="contactInfo" type="text/template">
+		<p>Наш телефон: 555 555 555</p>
+		<div class="map" title="Карта">
+			<img src="images/map.png" alt="map">
+		</div>
+	</script>
 </body>
 </html>
