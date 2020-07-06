@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Выбор даты рождения</title>
+<title>Выбор рубашки</title>
 <link href="../../assets/_css/jquery-ui.min.css" rel="stylesheet">
 <link href="../../assets/_css/site.css" rel="stylesheet">
-<link href="form.css" rel="stylesheet">
 <script src="../../assets/_js/jquery.min.js"></script>
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <style>
 	.choose-box {
+		width: 100%;
 		display: flex;
 	}
 
@@ -20,7 +20,27 @@
 </style>
 <script>
 $(document).ready(function() {
-	
+	$('#shirt-colors').selectmenu({
+		width: '178',
+		change: function(event, ui) {
+			var newImage;
+
+			if (ui.item.label === 'Коричневая') {
+				newImage = 'images/brown_shirt.jpg';
+			}
+			else if (ui.item.label === 'Зеленая') {
+				newImage = 'images/green_shirt.jpg';
+			}
+			else if (ui.item.label === 'Серая') {
+				newImage = 'images/grey_shirt.jpg';
+			}
+			else if (ui.item.label === 'Белая') {
+				newImage = 'images/white_shirt.jpg';
+			}
+
+			$('.shirt').attr('src', newImage);
+		}
+	}); // end selectmenu
 }); // end ready
 </script>
 </head>
@@ -33,9 +53,9 @@ $(document).ready(function() {
 		<div class="main">
 			<h1>Выбор рубашки</h1>
 			<div class="choose-box">
-				<img class="shirt" src="images/shirt_brown.jpg" alt="Рубашка">
+				<img class="shirt" src="images/brown_shirt.jpg" alt="Рубашка">
 				<form>
-				  <select name="" id="">
+				  <select name="" id="shirt-colors">
 				  	<option value="brown">Коричневая</option>
 				  	<option value="green">Зеленая</option>
 				  	<option value="grey">Серая</option>
