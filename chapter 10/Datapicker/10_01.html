@@ -10,7 +10,18 @@
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
- 	
+ 	$('#dob').datepicker({
+ 		changeMonth: true,
+ 		changeYear: true,
+ 		yearRange: '-120:+0',
+ 		maxDate: 0,
+ 		dateFormat: 'dd/mm/yy',
+ 		dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+ 		dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+ 		dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+ 		monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+ 		monthNamesShort: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+ 	});
 }); // end ready
 </script>
 </head>
