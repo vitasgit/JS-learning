@@ -9,8 +9,14 @@
 <script src="../../assets/_js/jquery.min.js"></script>
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <style>
+	h2 {
+		padding-bottom: 1.2em;
+		border-bottom: solid grey;
+		cursor: pointer;
+	}
+
 	#note {
-		max-width: 20%;
+		max-width: 30%;
 		border: solid;
 		border-radius: 5px;
 		padding: .5em;
@@ -19,7 +25,10 @@
 </style>
 <script>
 $(document).ready(function() {
-  $('#note').draggable();
+  $('#note').draggable({
+  	cursor: 'pointer',
+  	handle: 'h2'
+  });
 }); // end ready
 </script>
 </head>
@@ -35,6 +44,7 @@ $(document).ready(function() {
 		<div id="note">
 			  <h2>Ты можешь перетащить меня</h2>
         <p>Я заметка на странице.</p>
+        <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут, рыбные тексты. Буквенных проектах однажды решила путь что! Моей рыбного повстречался своего, снова продолжил. Переписали ему океана залетают о встретил пунктуация маленький!</p>
 		</div>
 	</div>
 	<footer>
