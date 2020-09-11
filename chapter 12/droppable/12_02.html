@@ -41,6 +41,12 @@ $(document).ready(function() {
   	handle: 'h2',
   	opacity: .5
   });
+
+  $('#trashbox').droppable({
+  	drop: function() {
+  		alert('вы действительно хотите удалить файл?');
+  	}
+  });
 }); // end ready
 </script>
 </head>
