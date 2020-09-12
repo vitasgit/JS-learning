@@ -23,7 +23,7 @@
 		background-color: #CFCAFF;
 	}
 
-	#trashbox {
+	#trashcan {
 		width: 200px;
 		height: 300px;
 		top: 0;
@@ -32,6 +32,10 @@
 		background-color: #C1C1C1;
 		border-radius: 5px;
 		opacity: .7;
+	}
+
+	.highlight {
+		background-color: red;
 	}
 </style>
 <script>
@@ -42,9 +46,9 @@ $(document).ready(function() {
   	opacity: .5
   });
 
-  $('#trashbox').droppable({
-  	drop: function() {
-  		alert('вы действительно хотите удалить файл?');
+  $('#trashcan').droppable({
+  	drop: function(event, ui){
+  		alert('message?: DOMString');
   	}
   });
 }); // end ready
@@ -65,7 +69,7 @@ $(document).ready(function() {
         <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут, рыбные тексты. Буквенных проектах однажды решила путь что! Моей рыбного повстречался своего, снова продолжил. Переписали ему океана залетают о встретил пунктуация маленький!</p>
 		</div>
 
-		<div id="trashbox">
+		<div id="trashcan">
 			<p>переместите объект для удаления</p>
 		</div>
 	</div>
