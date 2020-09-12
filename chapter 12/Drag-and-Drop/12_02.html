@@ -10,7 +10,16 @@
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-	alert('message?: DOMString')
+  $('#photos img').draggable({
+    revert : "invalid",
+  	start : function (event, ui) {
+      ui.helper.css('transform', 'rotate(5deg) scale(1.5)');
+    },
+    stop : function (event, ui) {
+      ui.helper.css('transform', 'rotate(0deg) scale(1)');
+    },
+    zIndex : 100
+	});
 }); // end ready
 </script>
 </head>
