@@ -12,6 +12,7 @@
 $(document).ready(function() {
   $('#photos img').draggable({
     revert : "invalid",
+
   	start : function (event, ui) {
       ui.helper.css('transform', 'rotate(5deg) scale(1.5)');
     },
@@ -20,6 +21,15 @@ $(document).ready(function() {
     },
     zIndex : 100
 	});
+
+  $('#trashcan').droppable({
+  	activeClass: 'highlight',
+
+  	drop: function(event, ui) {
+  		ui.helper.hide('explode');
+  		$(this).attr('src','../../assets/_images/trashcan-full-icon.png');
+  	}
+  })
 }); // end ready
 </script>
 </head>
