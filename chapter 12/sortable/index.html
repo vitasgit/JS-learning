@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Выбросьте это!</title>
+<link href="../../assets/_css/jquery-ui.min.css" rel="stylesheet">
+<link href="../../assets/_css/site.css" rel="stylesheet">
+<link href="interactions.css" rel="stylesheet">
+<script src="../../assets/_js/jquery.min.js"></script>
+<script src="../../assets/_js/jquery-ui.min.js"></script>
+<style>
+	.list .list__item {
+		cursor: pointer;
+	}
+</style>
+<script>
+$(document).ready(function() {
+  $('.list').sortable({
+  	opacity: .5,
+  	placeholder: 'ui-state-highlight'
+  });
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		JAVASCRIPT <span class="amp">и</span> jQUERY: НЕДОСТАЮЩЕЕ&nbsp;РУКОВОДСТВО
+	</header>
+	<div class="content">
+		<h1>Сортируемый список</h1>
+		<ul class="list">
+			<li class="list__item">
+				My Way -- Frank Sinatra
+			</li>
+			<li class="list__item">
+				Like а Rolling Stone -- ВоЬ Dylan
+			</li>
+			<li class="list__item">
+				Respect -- Aretha Franklin
+			</li>
+		</ul>
+	</div>
+	<footer>
+		<p>JavaScript и jQuery: Недостающее Руководство, Дэвид МакФарланд.</p>
+	</footer>
+</div>
+</body>
+</html>
