@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Сортируемые цвета</title>
+<title>Собери радугу</title>
 <link href="../../assets/_css/jquery-ui.min.css" rel="stylesheet">
 <link href="../../assets/_css/site.css" rel="stylesheet">
 <link href="game.css" rel="stylesheet" >
@@ -10,7 +10,23 @@
 <script src="../../assets/_js/jquery-ui.min.js"></script>
 <script>
 $(document).ready(function() {
-   
+  var answer = ['r','o','y','g','b','i','v'].join('');
+
+  $('#gameContainer').sortable({
+    axis: 'x',
+    containment: 'parent',
+
+    stop : function (event, ui) {
+      if ($(this).sortable("toArray").join('') === answer) {
+        alert('Радуга собрана!');
+        $(this).sortable("disable");
+      }
+    }
+   });
+
+  console.log(answer);
+
+
 }); // end ready
 </script>
 </head>
