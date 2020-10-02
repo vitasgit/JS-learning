@@ -28,9 +28,12 @@
 <script src="../../assets/_js/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-	$('#btn').click(function(event) {
-		alert('поехали')
-	});		
+	$('#newslinks a').click(function(event) {
+		var url = $(this).attr('href');
+		$('#headlines').load(url);
+		event.preventDefault();
+	});
+
 
 			
 }); // end ready
